@@ -7,20 +7,20 @@ Non-deterministic Finite Automata are a fundamental tool in computer theory and 
 With this program, users can create, visualize, and manipulate non-deterministic finite automata easily and quickly, enabling them to explore and understand fundamental concepts in computer theory and automation.
 
 
-## Key Features:
-# Creation and Manipulation of NFAs:
+# Key Features:
+## Creation and Manipulation of NFAs:
 Easily create and manipulate Non-Deterministic Finite Automata using the intuitive interface provided by the program. Define states, alphabets, transition functions, and final states to construct custom NFAs tailored to your specific requirements.
 
-# Validation of NFAs:
+## Validation of NFAs:
 Ensure the correctness of NFAs by validating them against predefined criteria. The program offers validation functions to check the structural integrity and coherence of NFAs, helping users identify and rectify any inconsistencies or errors in their automata designs.
 
-# Input String Acceptance Verification:
+## Input String Acceptance Verification:
 Verify whether a given input string is accepted by a specified NFA. Simply input the string and let the program execute it against the NFA, providing immediate feedback on whether the string is accepted or rejected by the automaton.
 
-# Computation of Epsilon Closure Union:
+## Computation of Epsilon Closure Union:
 Compute the union of epsilon closures for states within an NFA. This feature allows users to analyze the epsilon transitions within their automata, facilitating a deeper understanding of the computational behavior and structure of the NFA.
 
-## Create Automate
+# Create Automate
 To create the automata, a json file called automata.json will be used where the tuple of the automaton with which you are going to work will be entered.
 
 ``` json
@@ -39,15 +39,20 @@ To create the automata, a json file called automata.json will be used where the 
 This JSON file represents a non-deterministic finite automaton (NFA).
 It defines the states, alphabet, transition function, initial state, final states, and current state of the NFA.
 
-states - An array of strings representing the states of the NFA.
-alphabet - An array of strings representing the alphabet symbols of the NFA.
-sigma - An object representing the transition function of the NFA.
+## states 
+An array of strings representing the states of the NFA.
+## alphabet
+An array of strings representing the alphabet symbols of the NFA.
+## sigma  
+An object representing the transition function of the NFA.
     -The keys are the states, and the values are objects representing the transitions for each symbol in the alphabet.
     -Each transition object has keys as alphabet symbols and values as an array of destination states.
-initial - A string representing the initial state of the NFA.
-final - An array of strings representing the final states of the NFA.
+## initial 
+A string representing the initial state of the NFA.
+## final 
+An array of strings representing the final states of the NFA.
 
-## Run Locally
+# Run Locally
 
 Clone the project
 
