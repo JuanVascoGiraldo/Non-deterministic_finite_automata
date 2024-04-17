@@ -26,6 +26,16 @@ def ask_for_string(automaton: Automaton):
         print('The string is not accepted by the automaton')
 
 def union_epsilon_ock(automaton: Automaton):
+    """
+    Computes the union of epsilon locks for a given automaton.
+
+    Args:
+        automaton (Automaton): The automaton for which to compute the union of epsilon locks.
+
+    Returns:
+        set: The union of epsilon locks.
+
+    """
     states = []
     seguir = True
     while seguir:
