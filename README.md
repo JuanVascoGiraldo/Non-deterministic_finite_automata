@@ -36,6 +36,38 @@ To create the automata, a json file called automata.json will be used where the 
     "final": ["q2"]
 }
 ```
+example with epsilon transaction
+``` json
+{
+    "states": ["q0", "q1", "q2"],
+    "alphabet": ["0", "1"],
+    "sigma": {
+        "q0": {"0": ["q0"], "1": ["q0", "q1"], "epsilon": ["q1"]},
+        "q1": {"0": ["q2"], "1": ["q2"]},
+        "q2": {"0": ["q1"], "1": ["q1"]}
+    },
+    "initial": "q0",
+    "final": ["q2"]
+}
+```
+
+example with epsilon transaction
+``` json
+{
+    "states": ["q0", "q1", "q2", "q3", "q4"],
+    "alphabet": ["a", "b"],
+    "sigma": {
+        "q0": {"a": ["q3"], "b": [], "epsilon": ["q1"]},
+        "q1": {"a": [], "b": [], "epsilon": ["q2"]},
+        "q2": {"a": [], "b": []},
+        "q3": {"a": [], "b": ["q4"]},
+        "q4": {"a": [], "b": ["q0"], "epsilon": ["q1"]}
+    },
+    "initial": "q0",
+    "final": ["q0", "q2"]
+}
+```
+
 This JSON file represents a non-deterministic finite automaton (NFA).
 It defines the states, alphabet, transition function, initial state, final states, and current state of the NFA.
 
@@ -69,7 +101,7 @@ Go to the project directory
 Create a virutal environment 
 
 ```bash
-  virutalenv venv
+  python -m venv venv
 ```
 
 Activate the virutalenv

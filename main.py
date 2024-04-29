@@ -37,19 +37,29 @@ def union_epsilon_ock(automaton: Automaton):
 
     """
     states = []
+    states_consult = []
     seguir = True
-    while seguir:
+    while seguir and len(states_consult)!=len(automaton.states):
         print("select the state for which you want to know the epsilon lock")
         for state in automaton.states:
-            print(f'-{state}')
+            if state not in states_consult:
+                print(f'-{state}')
         state = input()
-        if not automaton.exist_status(state):
+        if state in states_consult:
+            print('The state is already in the union of epsilon locks')
+        elif not automaton.exist_status(state):
             print('The state is not in the states')
         else:
-            states.append(automaton.get_epsilon_lock(state))
-        print("Do you want to continue? [y/n]")
-        seguir = input() == 'y'
-    set(states)
+            states_consult.append(state)
+            states.extend(automaton.get_epsilon_lock(state))
+
+        if len(states_consult)==len(automaton.states):
+            print("All states have been consulted")
+        else:
+            print("Do you want to continue? [y/n]")
+            seguir = input() == 'y'
+
+    states=list(set(states))
     print("This is the union of the epsilon locks")
     print(states)
 
